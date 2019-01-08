@@ -1,0 +1,278 @@
+function Calc(){
+console.log("I am Calc ");
+var add= function(){
+console.log("I am Add ");
+}
+return add;
+
+}
+undefined
+typeof(Calc);
+"function"
+var e = Calc();
+VM374:2 I am Calc 
+undefined
+typeof(e);
+"function"
+e;
+ƒ (){
+console.log("I am Add ");
+}
+e();
+VM374:4 I am Add 
+undefined
+function Calc(){
+console.log("I am Calc ");
+var add= function(){
+console.log("I am Add ");
+}
+var sub = function(){
+console.log("I am Subtract ");
+}
+return [add,sub];
+
+}
+undefined
+var e = Calc();
+VM657:2 I am Calc 
+undefined
+e;
+(2) [ƒ, ƒ]0: ƒ ()1: ƒ ()length: 2__proto__: Array(0)
+e[0]();
+VM657:4 I am Add 
+undefined
+e[1]();
+VM657:7 I am Subtract 
+undefined
+function Calc(){
+console.log("I am Calc ");
+var add= function add(){
+console.log("I am Add ");
+}
+var sub = function sub(){
+console.log("I am Subtract ");
+}
+return [add,sub];
+
+}
+undefined
+var m = Calc();
+VM823:2 I am Calc 
+undefined
+m;
+(2) [ƒ, ƒ]0: ƒ add()1: ƒ sub()length: 2__proto__: Array(0)
+function Calc(){
+console.log("I am Calc ");
+var add= function (){
+console.log("I am Add ");
+}
+var sub = function (){
+console.log("I am Subtract ");
+}
+return {"add":add,"subtract":sub};
+
+}
+undefined
+var t = Calc();
+VM1020:2 I am Calc 
+undefined
+typeof(t);
+"object"
+t;
+{add: ƒ, subtract: ƒ}add: ƒ ()subtract: ƒ ()__proto__: Object
+t.add();
+VM1020:4 I am Add 
+undefined
+t.subtract();
+VM1020:7 I am Subtract 
+undefined
+function add(x, y){
+return x + y;
+}
+undefined
+var addition = (x,y)=>x+y;
+undefined
+addition(100,200);
+300
+typeof(addition);
+"function"
+var addition = (x,y)=>{
+//console.log("X "+x+" and Y "+y);
+console.log(`X is ${x} and Y is ${y}`); // String Interpolation ES6
+return x+y;
+}
+undefined
+addition(100,200);
+VM1714:3 X is 100 and Y is 200
+300
+var arr = [10,20,30,40];
+undefined
+typeof(arr);
+"object"
+arr instanceof Array;
+true
+arr.push(1000);
+5
+arr;
+(5) [10, 20, 30, 40, 1000]
+arr.pop();
+1000
+arr.splice(1);
+(3) [20, 30, 40]
+arr;
+[10]
+arr = [10,20,30,40,50];
+(5) [10, 20, 30, 40, 50]
+arr.splice(1,1);
+[20]
+arr;
+(4) [10, 30, 40, 50]
+var ram = {id:1001, name:'Ram',salary:9999};
+undefined
+var shyam = {id:1002, name:'Shyam',salary:8888};
+undefined
+function Employee(id , name, salary){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.salary  = salary;
+return obj;
+}
+undefined
+var tim = Employee(1001, "Tim",8888);
+undefined
+typeof(tim);
+"object"
+tim;
+{id: 1001, name: "Tim", salary: 8888}
+var shyam = Employee(1002,"Shyam",1111);
+undefined
+shyam;
+{id: 1002, name: "Shyam", salary: 1111}
+shyam instanceof Employee;
+false
+shyam instanceof Object;
+true
+function Customer(id, name, balance){
+this.id = id;
+this.name = name;
+this.balance = balance;
+}
+undefined
+typeof(Customer);
+"function"
+var tim = new Customer(1001, "Tim",2222);
+undefined
+typeof(tim);
+"object"
+tim;
+Customer {id: 1001, name: "Tim", balance: 2222}
+shyam;
+{id: 1002, name: "Shyam", salary: 1111}
+tim instanceof Customer;
+true
+tim instanceof Object;
+true
+class Product{
+constructor(id, name, price){
+this.id = id;
+this.name = name;
+this.price = price;
+}
+}
+undefined
+typeof(Product);
+"function"
+var mobile = new Product(1001, "Mobile",2222);
+undefined
+mobile;
+Product {id: 1001, name: "Mobile", price: 2222}
+typeof(mobile);
+"object"
+mobile instanceof Product;
+true
+function add(){
+console.log("this is add ");
+}
+undefined
+add();
+VM4328:2 this is add 
+undefined
+var e = new add();
+VM4328:2 this is add 
+undefined
+typeof(e);
+"object"
+e;
+add {}
+console.dir(add);
+VM4475:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: constructor: ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM4328:1[[Scopes]]: Scopes[2]__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM4328:1[[Scopes]]: Scopes[2]
+undefined
+Customer;
+ƒ Customer(id, name, balance){
+this.id = id;
+this.name = name;
+this.balance = balance;
+}
+var mike = new Customer();
+undefined
+mike;
+Customer {id: undefined, name: undefined, balance: undefined}
+tim;
+Customer {id: 1001, name: "Tim", balance: 2222}
+function Customer(id, name, balance){
+this.id = id;
+this.name = name;
+this.balance = balance;
+this.print=()=>{
+console.log(`Id is ${this.id} Name is ${this.name} and Balance is ${this.balance}`);
+}
+}
+undefined
+var tom = new Customer(1001, "Tom",9999);
+undefined
+tom;
+Customer {id: 1001, name: "Tom", balance: 9999, print: ƒ}
+var mike  = new Customer(1002,"Mike",3333);
+undefined
+mike;
+Customer {id: 1002, name: "Mike", balance: 3333, print: ƒ}
+tom.print();
+VM5225:6 Id is 1001 Name is Tom and Balance is 9999
+undefined
+mike.print();
+VM5225:6 Id is 1002 Name is Mike and Balance is 3333
+undefined
+Customer.prototype.show=()=>{
+console.log(`SHOW :: Id is ${this.id} Name is ${this.name} and Balance is ${this.balance}`);
+}
+()=>{
+console.log(`SHOW :: Id is ${this.id} Name is ${this.name} and Balance is ${this.balance}`);
+}
+var ram = new Customer(1001,'ram',3333);
+undefined
+ram;
+Customer {id: 1001, name: "ram", balance: 3333, print: ƒ}balance: 3333id: 1001name: "ram"print: ()=> {…}__proto__: show: ()=> {…}constructor: ƒ Customer(id, name, balance)__proto__: Object
+var shyam = new Customer(1002,'shyam',4444);
+undefined
+shyam;
+Customer {id: 1002, name: "shyam", balance: 4444, print: ƒ}
+ram.show();
+VM5815:2 SHOW :: Id is undefined Name is  and Balance is undefined
+undefined
+Customer.prototype.show=()=>{
+console.log('this is',this);
+console.log(`SHOW :: Id is ${this.id} Name is ${this.name} and Balance is ${this.balance}`);
+}
+()=>{
+console.log('this is',this);
+console.log(`SHOW :: Id is ${this.id} Name is ${this.name} and Balance is ${this.balance}`);
+}
+ram.show();
+VM6129:2 this is Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+VM6129:3 SHOW :: Id is undefined Name is  and Balance is undefined
+undefined
+typeof(ram);
+"object"
+ram instanceof Customer;
+true

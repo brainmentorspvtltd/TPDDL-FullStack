@@ -1,0 +1,267 @@
+function Customer(id, name, balance){
+this.id = id;
+this.name = name;
+this.balance = balance;
+this.print=()=>{
+console.log(`Id is ${this.id} Name is ${this.name} and Balance is ${this.balance}`);
+}
+}
+undefined
+Customer.prototype.display=function(){
+console.log('this is ',this);
+console.log("Id "+this.id +" Name "+this.name+" Balance "+this.balance);
+}
+ƒ (){
+console.log('this is ',this);
+console.log("Id "+this.id +" Name "+this.name+" Balance "+this.balance);
+}
+var amit = new Customer(1001, "Amit",3333);
+undefined
+amit.display();
+VM6620:2 this is  Customer {id: 1001, name: "Amit", balance: 3333, print: ƒ}
+VM6620:3 Id 1001 Name Amit Balance 3333
+undefined
+class Product{
+constructor(id, name , price){
+this.id = id;
+this.name = name;
+this.price = price;
+}
+print(){
+console.log("Id "+id+" name "+name+" Price "+price);
+}
+}
+undefined
+var p = new Product(1001, "P",1111);
+undefined
+p;
+Product {id: 1001, name: "P", price: 1111}
+String.prototype;
+String {"", length: 0, constructor: ƒ, anchor: ƒ, big: ƒ, blink: ƒ, …}anchor: ƒ anchor()big: ƒ big()blink: ƒ blink()bold: ƒ bold()charAt: ƒ charAt()charCodeAt: ƒ charCodeAt()codePointAt: ƒ codePointAt()concat: ƒ concat()constructor: ƒ String()endsWith: ƒ endsWith()fixed: ƒ fixed()fontcolor: ƒ fontcolor()fontsize: ƒ fontsize()includes: ƒ includes()indexOf: ƒ indexOf()italics: ƒ italics()lastIndexOf: ƒ lastIndexOf()length: 0link: ƒ link()localeCompare: ƒ localeCompare()match: ƒ match()normalize: ƒ normalize()padEnd: ƒ padEnd()padStart: ƒ padStart()repeat: ƒ repeat()replace: ƒ replace()search: ƒ search()slice: ƒ slice()small: ƒ small()split: ƒ split()startsWith: ƒ startsWith()strike: ƒ strike()sub: ƒ sub()substr: ƒ substr()substring: ƒ substring()sup: ƒ sup()toLocaleLowerCase: ƒ toLocaleLowerCase()toLocaleUpperCase: ƒ toLocaleUpperCase()toLowerCase: ƒ toLowerCase()toString: ƒ toString()toUpperCase: ƒ toUpperCase()trim: ƒ trim()trimEnd: ƒ trimEnd()trimLeft: ƒ trimStart()trimRight: ƒ trimEnd()trimStart: ƒ trimStart()valueOf: ƒ valueOf()Symbol(Symbol.iterator): ƒ [Symbol.iterator]()__proto__: Object[[PrimitiveValue]]: ""
+String.prototype.myfunction=()=>{
+console.log("My Function ");
+}
+()=>{
+console.log("My Function ");
+}
+var e ="Amit";
+undefined
+e.myfunction();
+VM7890:2 My Function 
+undefined
+p.print();
+VM7422:8 Uncaught ReferenceError: id is not defined
+    at Product.print (<anonymous>:8:19)
+    at <anonymous>:1:3
+print @ VM7422:8
+(anonymous) @ VM8374:1
+class Product{
+constructor(id, name , price){
+this.id = id;
+this.name = name;
+this.price = price;
+}
+print(){
+console.log("Id "+this.id+" name "+this.name+" Price "+this.price);
+}
+}
+VM8484:1 Uncaught SyntaxError: Identifier 'Product' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM8484:1
+var add = (x,y)=>x+y;
+undefined
+add(10,20);
+30
+add = 100;
+100
+add(10,20);
+VM8627:1 Uncaught TypeError: add is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM8627:1
+const add1 = (x,y)=>x+y;
+undefined
+add1=200;
+VM8701:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM8701:1
+class Product1{
+constructor(id, name , price){
+this.id = id;
+this.name = name;
+this.price = price;
+}
+print(){
+console.log("Id "+this.id+" name "+this.name+" Price "+this.price);
+}
+}
+undefined
+var m = new Product1(1001,"M",3333);
+undefined
+m;
+Product1 {id: 1001, name: "M", price: 3333}id: 1001name: "M"price: 3333__proto__: constructor: class Product1print: ƒ print()__proto__: Object
+m.print();
+VM8767:8 Id 1001 name M Price 3333
+undefined
+m.discount = 11;
+11
+m;
+Product1 {id: 1001, name: "M", price: 3333, discount: 11}
+var e = new Product1(1002, "E",4444);
+undefined
+e;
+Product1 {id: 1002, name: "E", price: 4444}
+Product1.prototype.test=function(){
+console.log("I am Test ");
+}
+ƒ (){
+console.log("I am Test ");
+}
+var v = new Product1(1002,"V",88888);
+undefined
+v;
+Product1 {id: 1002, name: "V", price: 88888}
+v.test();
+VM10520:2 I am Test 
+undefined
+e.test();
+VM10520:2 I am Test 
+undefined
+e;
+Product1 {id: 1002, name: "E", price: 4444}
+e.id;
+1002
+e.name;
+"E"
+var key = "name";
+undefined
+typeof(key);
+"string"
+e[key];
+"E"
+key="id";
+"id"
+e[key];
+1002
+e;
+Product1 {id: 1002, name: "E", price: 4444}
+for(let key in e){
+console.log("Key is ",key);
+}
+VM11714:2 Key is  id
+VM11714:2 Key is  name
+VM11714:2 Key is  price
+VM11714:2 Key is  test
+undefined
+for(let key in e){
+console.log("Key is ",key,"Value is ",e[key]);
+}
+VM11801:2 Key is  id Value is  1002
+VM11801:2 Key is  name Value is  E
+VM11801:2 Key is  price Value is  4444
+VM11801:2 Key is  test Value is  ƒ (){
+console.log("I am Test ");
+}
+undefined
+var m = {1:'Amit',2:1001,3:'Delhi'};
+undefined
+m.1;
+VM12022:1 Uncaught SyntaxError: Unexpected number
+m[1];
+"Amit"
+var m = {"a_1":'Amit',2:1001,3:'Delhi'};
+undefined
+m["a_1"]
+"Amit"
+m.a_1;
+"Amit"
+var m = {"a-1":'Amit',2:1001,3:'Delhi'};
+undefined
+m.["a-1"]
+VM12519:1 Uncaught SyntaxError: Unexpected token [
+m["a-1"]
+"Amit"
+var g = [10,20,30,40,50];
+undefined
+for(let i = 0; i<g.length;i++){
+console.log(g[i]);
+}
+VM12854:2 10
+VM12854:2 20
+VM12854:2 30
+VM12854:2 40
+VM12854:2 50
+undefined
+for(let i of g){
+console.log(i);
+}
+VM12956:2 10
+VM12956:2 20
+VM12956:2 30
+VM12956:2 40
+VM12956:2 50
+undefined
+function print(currentElement){
+console.log("Current Element is ",currentElement);
+}
+g.forEach(print);
+VM13676:2 Current Element is  10
+VM13676:2 Current Element is  20
+VM13676:2 Current Element is  30
+VM13676:2 Current Element is  40
+VM13676:2 Current Element is  50
+undefined
+g.forEach(currentElement=>console.log("Current Element is "+currentElement));
+VM13967:1 Current Element is 10
+VM13967:1 Current Element is 20
+VM13967:1 Current Element is 30
+VM13967:1 Current Element is 40
+VM13967:1 Current Element is 50
+undefined
+g.forEach((currentElement,index)=>console.log("Current Element is "+currentElement+" Index is "+index));
+VM14222:1 Current Element is 10 Index is 0
+VM14222:1 Current Element is 20 Index is 1
+VM14222:1 Current Element is 30 Index is 2
+VM14222:1 Current Element is 40 Index is 3
+VM14222:1 Current Element is 50 Index is 4
+undefined
+g.forEach((a,b)=>console.log("Current Element is "+a+" Index is "+b));
+VM14314:1 Current Element is 10 Index is 0
+VM14314:1 Current Element is 20 Index is 1
+VM14314:1 Current Element is 30 Index is 2
+VM14314:1 Current Element is 40 Index is 3
+VM14314:1 Current Element is 50 Index is 4
+undefined
+g;
+(5) [10, 20, 30, 40, 50]
+g=[10,20,30,40,50,60,50,10,50];
+(9) [10, 20, 30, 40, 50, 60, 50, 10, 50]
+g.filter(currentElement=>currentElement==50).length;
+3
+g.findIndex(c=>c==50);
+4
+c.find(c=>c==50);
+VM15135:1 Uncaught ReferenceError: c is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM15135:1
+g.find(c=>c==50);
+50
+g.find(c=>c==500);
+undefined
+g.findIndex(c=>c==500);
+-1
+g.sort((a,b)=>a-b);
+(9) [10, 10, 20, 30, 40, 50, 50, 50, 60]
+g.sort((a,b)=>b-a);
+(9) [60, 50, 50, 50, 40, 30, 20, 10, 10]
+var names = ["ram","amit","shyam","anil","tim"];
+undefined
+"ram".localeCompare("amit");
+1
+"amit".localeCompare("ram");
+-1
+"amit".localeCompare("amit");
+0
+names.sort((a,b)=>a.localeCompare(b));
+(5) ["amit", "anil", "ram", "shyam", "tim"]
+names.sort((a,b)=>b.localeCompare(a));
+(5) ["tim", "shyam", "ram", "anil", "amit"]
