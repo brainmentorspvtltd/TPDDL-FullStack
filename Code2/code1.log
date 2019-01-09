@@ -1,0 +1,135 @@
+var x = [10,20,30,40,50];
+undefined
+var r  =x.map(y=>y*y);
+undefined
+r;
+(5) [100, 400, 900, 1600, 2500]
+x;
+(5) [10, 20, 30, 40, 50]
+var r  =x.map(y=>`<b>${y*y}</b>`);
+undefined
+r;
+(5) ["<b>100</b>", "<b>400</b>", "<b>900</b>", "<b>1600</b>", "<b>2500</b>"]
+var r  =x.map(y=>y+(y*0.10));
+undefined
+r;
+(5) [11, 22, 33, 44, 55]
+var z = x.map(y=>y);
+undefined
+z;
+(5) [10, 20, 30, 40, 50]
+x;
+(5) [10, 20, 30, 40, 50]
+z[0]=1000;
+1000
+z;
+(5) [1000, 20, 30, 40, 50]
+x;
+(5) [10, 20, 30, 40, 50]
+var z = x.filter(y=>true);
+undefined
+z;
+(5) [10, 20, 30, 40, 50]
+var e = [10,20,30,40,50];
+undefined
+var e1 = [90,10,50,99,100];
+undefined
+var gg = [...e,...e1];
+undefined
+gg;
+(10) [10, 20, 30, 40, 50, 90, 10, 50, 99, 100]
+var g = [e,e1];
+undefined
+g;
+(2) [Array(5), Array(5)]0: (5) [10, 20, 30, 40, 50]1: (5) [90, 10, 50, 99, 100]length: 2__proto__: Array(0)
+var obj = {id:1001, name:'Ram',salary:9999};
+undefined
+var obj2 = {bonus:8888, dept:'IT',salary:55555};
+undefined
+var d = {obj,obj2};
+undefined
+d;
+{obj: {…}, obj2: {…}}obj: {id: 1001, name: "Ram", salary: 9999}obj2: {bonus: 8888, dept: "IT", salary: 55555}__proto__: Object
+obj.id++;
+1001
+obj;
+{id: 1002, name: "Ram", salary: 9999}
+d;
+{obj: {…}, obj2: {…}}obj: {id: 1002, name: "Ram", salary: 9999}obj2: {bonus: 8888, dept: "IT", salary: 55555}__proto__: Object
+var w = {...obj,...obj2};
+undefined
+w;
+{id: 1002, name: "Ram", salary: 55555, bonus: 8888, dept: "IT"}
+obj;
+{id: 1002, name: "Ram", salary: 9999}
+obj2;
+{bonus: 8888, dept: "IT", salary: 55555}
+var e = {id:1001};
+undefined
+e.name = "Ram";
+"Ram"
+e;
+{id: 1001, name: "Ram"}
+e.id=1002;
+1002
+e;
+{id: 1002, name: "Ram"}
+function add(...args){
+var sum = 0;
+for(let i = 0 ; i<args.length; i++){
+sum+=args[i];
+}
+return sum;
+}
+undefined
+add(10,20,30);
+60
+e;
+{id: 1002, name: "Ram"}
+gg;
+(10) [10, 20, 30, 40, 50, 90, 10, 50, 99, 100]
+var [,,b,,d] = gg;
+undefined
+b;
+30
+d;
+50
+var [x,y]  = [10,20];
+undefined
+x;
+10
+y;
+20
+[x,y]= [y,x];
+(2) [20, 10]
+y;
+10
+x;
+20
+var obj = {id:1001, name:'Ram',salary:9999};
+undefined
+var t = obj.name;
+var {name,id} = obj;
+undefined
+name;
+"Ram"
+id;
+1001
+function print({id, name ,salary}){
+console.log(`Id is ${id} Name is ${name} Salary is ${salary}`);
+}
+undefined
+print(obj);
+VM3208:2 Id is 1001 Name is Ram Salary is 9999
+undefined
+var e = [10,20,30,40,50,10,20,10];
+undefined
+e.reduce((acc,currentElement)=>acc + currentElement);
+190
+e.reduce((acc,currentElement)=>{
+if(currentElement ==10){
+acc.push(currentElement);
+}
+return acc;
+},acc=[]);
+(3) [10, 10, 10]
