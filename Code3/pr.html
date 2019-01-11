@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async Demo</title>
+    <script>
+        var counter = 0;
+
+        function light() {
+            counter++;
+            document.getElementById("loutput").innerText = counter;
+        }
+
+        function giveMeValue(val) {
+            console.log("Finally Value Comes Here ", val);
+        }
+        var promise;
+
+        function process() {
+            console.log("Before Call");
+            //var m = heavy() ; // Synch Style (Bad)
+            //heavy(giveMeValue); // Call Back
+            promise = heavy();
+            console.log("Promise is ", promise);
+            promise.then(data => {
+                console.log("Data Resolve ", data);
+            }).catch(err => {
+                console.log("Fail ", err);
+            })
+            console.log("After Call");
+            //console.log("After Call ", m)
+            // setTimeout(heavy, 7000);
+        }
+
+        function heavy() {
+            var pr = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Heavy Going to Start.....");
+                    for (let i = 1; i <= 100000; i++) {
+                        for (let j = 1; j <= 100000; j++) {
+
+                        }
+                    }
+                    console.log("Heavy Done...");
+                    document.getElementById("houtput").innerHTML = "<b>Heavy Done</b>";
+                    resolve(1000);
+                    // fn(1000);
+                    //return 1000; // Bad in Async 
+                }, 7000); //7000 ms
+            });
+            return pr;
+
+            // 1 sec = 1000ms
+
+        }
+    </script>
+</head>
+
+<body>
+    <p>Light <span id="loutput"></span></p>
+    <button onclick="light()">Light</button>
+    <br>
+    <p>Heavy <span id="houtput"></span></p>
+    <button onclick="process()">Heavy</button>
+</body>
+
+</html>

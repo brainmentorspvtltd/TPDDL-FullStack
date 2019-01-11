@@ -1,0 +1,58 @@
+async function cube(num){
+	var pr = new Promise((resolve, reject)=>{
+	resolve(num**3);    
+},3000);
+	return pr; 
+}
+undefined
+Promise.all([cube(3), cube(2), cube(5)]).then(results=>{
+console.log("results are ",results);
+}).catch(err=>console.log("Error is ", err);
+VM56104:3 Uncaught SyntaxError: missing ) after argument list
+Promise.all([cube(3), cube(2), cube(5)]).then(results=>{
+console.log("results are ",results);
+}).catch(err=>console.log("Error is ", err));
+VM56127:2 results are  (3) [27, 8, 125]
+Promise {<resolved>: undefined}
+async function cube2(num){
+	var pr = new Promise((resolve, reject)=>{
+	reject("Error in Cube2");    
+},3000);
+	return pr; 
+}
+undefined
+Promise.all([cube(3), cube(2), cube(5),cube2(1)]).then(results=>{
+console.log("results are ",results);
+}).catch(err=>console.log("Error is ", err));
+VM56683:3 Error is  Error in Cube2
+Promise {<resolved>: undefined}
+async function total(){
+return await cube(3) + await cube(2) + await cube(4);
+}
+undefined
+var pr = total();
+pr.then(data=>console.log("data is ",data)).catch(err=>console.log("Error is ",err));
+VM57692:2 data is  99
+Promise {<resolved>: undefined}
+async function cube(num){
+	var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{	
+resolve(num**3);
+    },3000 )   
+});
+	return pr; 
+}
+undefined
+var pr = total();
+pr.then(data=>console.log("data is ",data)).catch(err=>console.log("Error is ",err));
+Promise {<pending>}
+VM57974:2 data is  99
+Promise.all([cube(3), cube(2), cube(5)]).then(results=>{
+console.log("results are ",results);
+}).catch(err=>console.log("Error is ", err));
+Promise {<pending>}
+VM58055:2 results are  (3) [27, 8, 125]
+var pr = total();
+pr.then(data=>console.log("data is ",data)).catch(err=>console.log("Error is ",err));
+Promise {<pending>}
+VM58084:2 data is  99
