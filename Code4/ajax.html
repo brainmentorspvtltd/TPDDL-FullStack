@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .size {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <title>Document</title>
+    <script>
+        function printImage(arr) {
+            var div = document.querySelector("#result");
+            div.innerHTML = "";
+            arr.forEach(obj => {
+                div.appendChild(createImage(obj.images.original.url));
+                //console.log(obj.images.original.url);
+            })
+
+        }
+
+        function createImage(url) {
+            var img = document.createElement("img"); // <img>
+            img.src = url; //<img src="">
+            img.className = "size"; // <img src="" class="size">
+            return img;
+        }
+
+        function doAjax() {
+            console.log("ajax");
+            var imageName = document.querySelector("#searchTxt").value;
+            var url = "http://api.giphy.com/v1/gifs/search?q=" + imageName + "&api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&limit=5";
+            var promise = fetch(url); // ajax call
+            promise.then(response => {
+                response.json().then(data => {
+                    //console.log("JSON is ", data);
+                    printImage(data.data);
+                }).catch(err => {
+                    console.log("Invalid JSON ", err);
+                })
+            }).catch(err => {
+                console.log("Connection Error ", err);
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <input id="searchTxt" type="text" placeholder="Type to Search">
+    <button onclick="doAjax()">Ajax</button>
+    <fieldset>
+        <legend>Output</legend>
+        <div id="result">
+        </div>
+    </fieldset>
+</body>
+
+</html>
