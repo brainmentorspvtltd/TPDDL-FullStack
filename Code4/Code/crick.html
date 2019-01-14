@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function pTag(key, value) {
+            var p = document.createElement("p");
+            p.innerText = key + " " + value;
+            return p;
+        }
+
+        function print(playerObject) {
+            var div = document.querySelector("#result");
+            div.innerHTML = "";
+            var img = document.createElement("img");
+            img.src = playerObject.imageURL;
+            div.appendChild(img);
+            div.appendChild(pTag("Name", playerObject.fullName));
+            div.appendChild(pTag("Born", playerObject.born));
+            div.appendChild(pTag("Age", playerObject.currentAge));
+
+
+        }
+
+        function bio() {
+            var playerId = document.querySelector("#player").value;
+            if (playerId != -1) {
+                let url = `http://cricapi.com/api/playerStats?pid=${playerId}&apikey=A8zoDoPaQgefmB7KunnSuApSgL73`;
+                let promise = fetch(url);
+                promise.then(response => {
+                    response.json().then(data => {
+                        console.log("Data is ", data);
+                        print(data);
+                    }).catch(e => {
+                        console.log('Invalid JSON ', e);
+                    })
+                }).catch(err => {
+                    console.log("Network Error or Resource Not Found ", err);
+                })
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <select id="player">
+        <option value="-1">Choose  Player</option>
+        <option value="35320">Sachin</option>
+        <option value="28081">Dhoni</option>
+        <option value="253802">Virat</option>
+    </select>
+    <button onclick="bio()">Bio</button>
+    <fieldset>
+        <legend>Bio</legend>
+        <div id="result"></div>
+    </fieldset>
+</body>
+
+</html>
