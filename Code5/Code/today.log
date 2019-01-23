@@ -1,0 +1,135 @@
+window;
+Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+this;
+Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+window == this;
+true
+var a = 100;
+undefined
+window.a;
+100
+this.a;
+100
+let rr = 100;
+undefined
+window.rr;
+undefined
+this.rr;
+undefined
+function test(){
+console.log("i is ",i);
+for(var i = 1;i<=10; i++){
+console.log("i is ",i);
+}
+console.log("i is ",i);
+}
+undefined
+test();
+VM558:2 i is  undefined
+VM558:4 i is  1
+VM558:4 i is  2
+VM558:4 i is  3
+VM558:4 i is  4
+VM558:4 i is  5
+VM558:4 i is  6
+VM558:4 i is  7
+VM558:4 i is  8
+VM558:4 i is  9
+VM558:4 i is  10
+VM558:6 i is  11
+undefined
+i;
+VM588:1 Uncaught ReferenceError: i is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM588:1
+function show(){
+}
+undefined
+show();
+undefined
+function show(){
+return 100;
+}
+undefined
+show();
+100
+function whoAmI(){
+console.log("I am ",this, " Name is ",this.name); 
+}
+undefined
+window.whoAmI
+ƒ whoAmI(){
+console.log("I am ",this, " Name is ",this.name); 
+}
+var name = "Ram";
+undefined
+window.name;
+"Ram"
+whoAmI();
+VM959:2 I am  Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}  Name is  Ram
+undefined
+var object = {name:'Amit'};
+undefined
+window.object.name;
+"Amit"
+console.dir(whoAmI);
+VM1329:1 ƒ whoAmI()arguments: nullcaller: nulllength: 0name: "whoAmI"prototype: {constructor: ƒ}__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM959:1[[Scopes]]: Scopes[2]
+undefined
+var fn = whoAmI.bind(object);
+undefined
+whoAmI();
+VM959:2 I am  Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}  Name is  Ram
+undefined
+fn();
+VM959:2 I am  {name: "Amit"}  Name is  Amit
+undefined
+whoAmI.bind(object)();
+VM959:2 I am  {name: "Amit"}  Name is  Amit
+undefined
+whoAmI();
+VM959:2 I am  Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}  Name is  Ram
+undefined
+whoAmI.bind(object)();
+VM959:2 I am  {name: "Amit"}  Name is  Amit
+undefined
+whoAmI.bind(undefined);
+ƒ whoAmI(){
+console.log("I am ",this, " Name is ",this.name); 
+}
+whoAmI.bind(undefined)();
+VM959:2 I am  Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}  Name is  Ram
+undefined
+whoAmI.call(object);
+VM959:2 I am  {name: "Amit"}  Name is  Amit
+undefined
+function whoAmI(address,phone,email){
+console.log("I am ",this, " Name is ",this.name,"Address",address,"Phone",phone, "Email ",email); 
+}
+undefined
+var fn = whoAmI.bind(object);
+undefined
+fn("Delhi","2222","a@yahoo.com");
+VM2272:2 I am  {name: "Amit"}  Name is  Amit Address Delhi Phone 2222 Email  a@yahoo.com
+undefined
+whoAmI.call(object,"delhi","1111","a@yahoo.com");
+VM2272:2 I am  {name: "Amit"}  Name is  Amit Address delhi Phone 1111 Email  a@yahoo.com
+undefined
+var arr = ["delhi","2222","aa@yahoo.com"];
+whoAmI.apply(object,arr);
+VM2272:2 I am  {name: "Amit"}  Name is  Amit Address delhi Phone 2222 Email  aa@yahoo.com
+undefined
+var value = 1000 ;
+var calcComp = "<div><h1>"+value+"</h1></div>";
+undefined
+document.body.innerHTML = calcComp;
+"<div><h1>1000</h1></div>"
+document.body.innerHTML = calcComp;
+"<div><h1>1000</h1></div>"
+document.body.innerHTML = calcComp;
+"<div><h1>1000</h1></div>"
+document.body.innerHTML = calcComp;
+"<div><h1>1000</h1></div>"
+document.body.innerHTML = calcComp;
+"<div><h1>1000</h1></div>"
+document.body.innerHTML = calcComp;
+"<div><h1>1000</h1></div>"
