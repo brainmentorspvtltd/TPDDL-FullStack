@@ -1,0 +1,123 @@
+var obj = {
+arr:[10,20,1,2,5,7],
+evenArr:[],
+getEven(){
+this.arr.forEach(e=>{
+if(e%2==0){
+this.evenArr.push(e);
+}
+});
+return this.evenArr;
+}
+}
+undefined
+obj.evenArr();
+VM685:1 Uncaught TypeError: obj.evenArr is not a function
+    at <anonymous>:1:5
+(anonymous) @ VM685:1
+obj.getEven();
+(3) [10, 20, 2]
+var obj = {
+arr:[10,20,1,2,5,7],
+evenArr:[],
+getEven(){
+this.arr.forEach(function(e){
+if(e%2==0){
+this.evenArr.push(e);
+}
+});
+return this.evenArr;
+}
+}
+undefined
+obj.evenArr();
+VM793:1 Uncaught TypeError: obj.evenArr is not a function
+    at <anonymous>:1:5
+(anonymous) @ VM793:1
+obj.getEven();
+VM770:7 Uncaught TypeError: Cannot read property 'push' of undefined
+    at <anonymous>:7:14
+    at Array.forEach (<anonymous>)
+    at Object.getEven (<anonymous>:5:10)
+    at <anonymous>:1:5
+(anonymous) @ VM770:7
+getEven @ VM770:5
+(anonymous) @ VM827:1
+function test(){
+var w = 10;
+var e = ()=>{
+w++;
+}
+return e;
+}
+undefined
+var q = test();
+undefined
+q;
+()=>{
+w++;
+}
+q();
+undefined
+function test(){
+var w = 10;
+var e = ()=>{
+w++;
+return w;
+}
+return e;
+}
+undefined
+var r = test();
+undefined
+r;
+()=>{
+w++;
+return w;
+}
+r();
+11
+r();
+12
+r();
+13
+r();
+14
+var obj = {
+arr:[10,20,1,2,5,7],
+evenArr:[],
+getEven(){
+this.arr.forEach(function(e){
+if(e%2==0){
+this.evenArr.push(e);
+}
+});
+return this.evenArr;
+}
+}
+undefined
+obj.getEven();
+VM1485:7 Uncaught TypeError: Cannot read property 'push' of undefined
+    at <anonymous>:7:14
+    at Array.forEach (<anonymous>)
+    at Object.getEven (<anonymous>:5:10)
+    at <anonymous>:1:5
+(anonymous) @ VM1485:7
+getEven @ VM1485:5
+(anonymous) @ VM1508:1
+var obj = {
+arr:[10,20,1,2,5,7],
+evenArr:[],
+getEven(){
+var that = this;
+this.arr.forEach(function(e){
+if(e%2==0){
+that.evenArr.push(e);
+}
+});
+return that.evenArr;
+}
+}
+undefined
+obj.getEven();
+(3) [10, 20, 2]

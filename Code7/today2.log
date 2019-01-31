@@ -1,0 +1,18 @@
+var ques = [1, 0, 2, 0, 4];
+undefined
+ques.reduce((acc,q)=>{
+	return acc +=q;
+},acc=0);
+7
+ques.reduce((acc,q)=>{
+console.log("Acc is ",acc , " Q is ",q);
+	return acc +=q;
+},acc=0);
+VM287:2 Acc is  0  Q is  1
+VM287:2 Acc is  1  Q is  0
+VM287:2 Acc is  1  Q is  2
+VM287:2 Acc is  3  Q is  0
+VM287:2 Acc is  3  Q is  4
+7
+ques;
+(5) [1, 0, 2, 0, 4]
