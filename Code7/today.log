@@ -1,0 +1,45 @@
+var arr =[10,20,30,40,50];
+undefined
+for(let i of arr){
+console.log(i);
+}
+VM810:2 10
+VM810:2 20
+VM810:2 30
+VM810:2 40
+VM810:2 50
+undefined
+for(let i = 0; i<arr.length; i++){
+console.log(arr[i]);
+}
+VM971:2 10
+VM971:2 20
+VM971:2 30
+VM971:2 40
+VM971:2 50
+undefined
+arr.forEach(e=>console.log(e))
+VM1038:1 10
+VM1038:1 20
+VM1038:1 30
+VM1038:1 40
+VM1038:1 50
+undefined
+var obj = {id:1001, name:'Ram'};
+undefined
+typeof(obj);
+"object"
+var x = JSON.stringify(obj);
+undefined
+typeof(x);
+"string"
+x.id;
+undefined
+x;
+"{"id":1001,"name":"Ram"}"
+var y = JSON.parse(x);
+undefined
+typeof(y);
+"object"
+y.id;
+1001
