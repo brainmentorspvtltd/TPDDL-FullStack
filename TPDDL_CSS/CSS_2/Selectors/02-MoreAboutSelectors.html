@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #header a,
+        #main .section_1 a {
+            font-size: 20px;
+            text-decoration: none;
+        }
+        
+        #header .logo a {
+            color: red;
+        }
+        
+        #header .nav a {
+            color: darkblue;
+        }
+        
+        #header .search input[type='submit'] {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Selectors Reference -->
+    <!-- https://www.w3.org/TR/selectors-3/ -->
+
+    <h1>Selectors</h1>
+
+    <div id="header">
+        <div class="logo">
+            <a href="#">
+                Company Logo
+            </a>
+        </div>
+        <div class="nav">
+            <!-- ul>li*5>a -->
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Books</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <form action="#">
+                <input type="text" placeholder="Enter your search">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="section_1">
+            <!-- ul>li*6>a{This is item_$} -->
+            <ul>
+                <li><a href="#">This is item_1</a></li>
+                <li><a href="#">This is item_2</a></li>
+                <li><a href="#">This is item_3</a></li>
+                <li><a href="#">This is item_4</a></li>
+                <li><a href="#">This is item_5</a></li>
+                <li><a href="#">This is item_6</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+div {
+    height: 200px;
+    background-color: lightblue;
+}
+
+#div_2 {
+    background-color: lightgreen;
+}
+
+.class_1 {
+    width: 50%;
+}
+
+.class_2 {
+    width: 70%;
+}
