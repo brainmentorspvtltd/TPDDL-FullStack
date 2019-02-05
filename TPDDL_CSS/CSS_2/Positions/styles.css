@@ -1,0 +1,141 @@
+body {
+    margin: 0px;
+    padding-top: 10px;
+    background-color: #E3E6E3;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#header {
+    background-color: #009270;
+    position: fixed;
+    width: 79%;
+    /* bottom: 0px; */
+    top: 0px;
+    z-index: 100;
+}
+
+#header .logo {
+    width: 12%;
+    padding-left: 10px;
+    padding-top: 6px;
+}
+
+#main-navigation {
+    width: 67%;
+}
+
+#main-navigation ul li {
+    display: inline-block;
+    /* width: 10%; */
+    text-align: center;
+}
+
+#main-navigation ul li a {
+    color: #fff;
+    display: block;
+    padding: 15px 8px;
+}
+
+#main-navigation ul li a:hover {
+    background-color: #028062;
+}
+
+#header .search {
+    width: 15%;
+    padding: 8px;
+}
+
+#header .search input[type='text'] {
+    background-color: #00785C;
+    color: #fff;
+    padding: 5px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    /* chrome and safari */
+    -webkit-border-radius: 5px;
+    /* mozilla */
+    -moz-border-radius: 5px;
+    /* opera */
+    -o-border-radius: 5px;
+    /* micorsoft */
+    -ms-border-radius: 5px;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+}
+
+#content {
+    margin-top: 70px;
+    position: relative;
+}
+
+#sidebar_1 {
+    width: 16%;
+    height: 80%;
+    padding: 8px;
+    position: fixed;
+    background-color: #fff;
+    overflow-y: scroll;
+}
+
+#sidebar_1 h4 {
+    margin-bottom: 0px;
+}
+
+#main {
+    width: 45%;
+    background-color: #fff;
+    margin-left: 23%;
+    padding: 10px;
+}
+
+#main img {
+    width: 100%;
+}
+
+#main {
+    /* position: relative; */
+}
+
+#main .images {
+    position: relative;
+}
+
+#main .play-icon {
+    width: 15%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -7%;
+    margin-top: -7%;
+}
