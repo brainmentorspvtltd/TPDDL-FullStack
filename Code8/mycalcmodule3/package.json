@@ -1,0 +1,15 @@
+{
+    "name": "mycalcmodule3",
+    "version": "0.0.2",
+    "description": "this is test module just for learning",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "amit",
+        "srivastava"
+    ],
+    "author": "Amit Srivastava",
+    "license": "ISC"
+}
