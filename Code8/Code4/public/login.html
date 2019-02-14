@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+    <script>
+        function doLogin() {
+            var userid = document.querySelector("#userid").value;
+            var pwd = document.querySelector("#pwd").value;
+            var pr = fetch("http://localhost:1234/login?userid=" + userid + "&pwd=" + pwd);
+            pr.then(res => {
+                console.log('Response is ', res);
+                res.text().then(data => {
+                    console.log('Data is ', data);
+                    if (data.startsWith('Welcome')) {
+                        document.querySelector("#loginDiv").className = 'hide';
+                        localStorage.userid = userid;
+                        location.href = 'dashboard.html';
+
+                    }
+                    document.querySelector('#msg').innerText = data;
+                }).catch(e => {
+                    console.log("Error is ", e);
+                }).catch(e => {
+                    console.log("Response Error is ", e);
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Login Page</h1>
+    <p id='msg'></p>
+    <!-- <form action="login"> -->
+    <div id='loginDiv'>
+        <input id="userid" name='userid' type="text" placeholder='Type Userid'>
+        <input id="pwd" name='pwd' type="password" placeholder='Type Password'>
+        <button onclick="doLogin()">Login</button>
+    </div>
+    <!-- </form> -->
+</body>
+
+</html>
