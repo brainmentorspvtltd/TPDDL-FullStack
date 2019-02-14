@@ -1,0 +1,48 @@
+var middleware= [];
+undefined
+function app(){
+	console.log("I am App ");
+
+}
+function express(){
+console.log("I am Express ");
+return app;
+}
+
+undefined
+const app2 = express();
+VM2861:6 I am Express 
+undefined
+app2;
+ƒ app(){
+	console.log("I am App ");
+
+}
+app2();
+VM2861:2 I am App 
+undefined
+var index =0;
+app.use=(middlewareFn)=>{
+	middleware[index++] = middlewareFn;
+}
+(middlewareFn)=>{
+	middleware[index++] = middlewareFn;
+}
+function myMiddleWare(req,res,nxt){
+	console.log("I am a Middleware ");
+}
+undefined
+middleware;
+[]
+app;
+ƒ app(){
+	console.log("I am App ");
+
+}
+app.use(myMiddleWare);
+undefined
+middleware;
+[ƒ]
+middleware[0]()
+VM3493:2 I am a Middleware 
+undefined
