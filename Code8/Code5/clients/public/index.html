@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function doAjax() {
+            const url = 'http://localhost:1234/getxml';
+            var pr = fetch(url);
+            pr.then(res => {
+                res.text().then(data => {
+                    console.log('Data Rec ', data);
+                }).catch(err => {
+                    console.log('INvalid XML ', err);
+                }).catch(e => {
+                    console.log('Server Error ', e);
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="doAjax()">Call Server1 @1234 </button>
+</body>
+
+</html>
