@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function getLiveScore() {
+            var msg = '';
+            var es = new EventSource("http://localhost:1234/score");
+            // Register Listener
+            es.addEventListener("servermessage", (eventArg) => {
+                    msg += eventArg.data;
+                    document.querySelector("#message").value = msg;
+                })
+                // es.close(); // Close EventSource If Not Required
+        }
+    </script>
+</head>
+
+<body>
+    <textarea id="message" cols="30" rows="10"></textarea>
+    <button onclick="getLiveScore()">Live Score</button>
+</body>
+
+</html>

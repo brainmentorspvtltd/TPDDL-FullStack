@@ -1,0 +1,6 @@
+::1 - - [01/Mar/2019:03:57:50 +0000] "POST /login HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36"
+::1 - - [01/Mar/2019:04:00:57 +0000] "POST /login HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36"
+::1 - - [01/Mar/2019:04:02:09 +0000] "OPTIONS /login HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36"
+::1 - - [01/Mar/2019:04:02:09 +0000] "POST /login HTTP/1.1" 200 104 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36"
+::1 - - [01/Mar/2019:04:02:52 +0000] "OPTIONS /login HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36"
+::1 - - [01/Mar/2019:04:02:52 +0000] "POST /login HTTP/1.1" 200 104 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36"
