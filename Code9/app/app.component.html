@@ -1,0 +1,10 @@
+<h1>{{message}}</h1>
+<button (click)="showhide()">Show hide</button>
+<div [hidden]="flag">
+    <ul>
+        <li *ngFor="let fruit of fruits">
+            <p [class]="className" [innerHTML]="fruit.name"></p>
+            <p>{{fruit.id}} {{fruit.name}} {{fruit.price|currency:'INR'}}</p>
+        </li>
+    </ul>
+</div>
