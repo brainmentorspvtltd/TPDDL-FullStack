@@ -1,0 +1,68 @@
+<h1>Angular App </h1>
+
+<p>Calling Child</p>
+Parent Data Rec {{parentDataRec}}
+<input type="text" placeholder="Send Data to Child1" (input)="sendToChild($event)">
+<app-child1 (sendBackToParent)="recChildData($event)" [sendchild1]="data"></app-child1>
+<br><br>
+<app-child2></app-child2>
+<button (click)="callChild2()">Call Child2</button> Sum is {{sum}}
+<br>
+
+<hr>
+<input type="text" placeholder="Type Message Here in Parent" (input)="sendToChildrens($event)">
+<p>Calling Child3</p>
+<app-child3></app-child3>
+<app-child3></app-child3>
+<app-child3></app-child3>
+<app-child3></app-child3>
+
+<br>
+<br>
+<br>
+<br>
+
+<button (click)="plus()">Plus</button>
+<div [ngSwitch]="counter">
+    <p *ngSwitchCase="1">Sunday</p>
+    <p *ngSwitchCase="2">Monday</p>
+    <p *ngSwitchCase="3">Tuesday</p>
+    <p *ngSwitchDefault>Wrong Day</p>
+
+</div>
+<ul>
+    Fruits are {{fruits}}
+    <br> All Products are {{products|json}}
+
+    <input type="text" placeholder='Type First Number' #first>
+    <input type="text" placeholder='Type Second Number' #second>
+    <input type="text" placeholder='Type Third Number' #third>
+    <button (click)="add(first.value, second.value, third.value)">Add</button> Sum is {{result}}
+    <br>
+    <div *ngIf="isLogin==false then login else logout">
+
+    </div>
+    <ng-template #login>You Need to Login First <button>Login</button></ng-template>
+    <ng-template #logout>Click to Logout <button>LogOut</button></ng-template>
+
+
+    <ul>
+        <li *ngFor="let product of products">
+            <h1 *ngIf="product.id==1001">
+                <p>{{product.id|number:'3.2'}} {{product.name}} {{product.price|currency:'INR':true:'.2'}}</p>
+            </h1>
+            {{product.id|number:'3.2'}} {{product.name}} {{product.price|currency:'INR':true:'.2'}}
+        </li>
+    </ul>
+    <br>
+    <li *ngFor="let fruit of fruits;let i=index">
+        {{i+1}} {{fruit|titlecase|slice:0:3}}
+    </li>
+
+    <hr>
+    <input type="text" [value]="cardNumber" (change)="takeCardNumber($event)" placeholder="Type CardNumber">
+    <img [src]="cardNumber|cardpipe">
+    <!-- cardpipe(cardNumber)-->
+    <br> Phone Number is {{mobile|phone}}
+    <br> Phone Number is {{mobile|phone:4:'?'}}
+</ul>
