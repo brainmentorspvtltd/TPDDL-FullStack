@@ -1,9 +1,8 @@
-<h1>RX Demos </h1>
+<h1>SPA Demo</h1>
 
-<button (click)="subscribeObs($event,'Sub1')">Sub1</button>
-<button (click)="subscribeObs($event,'Sub2')">Sub2</button>
+<a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a>
+<a routerLink="/about">About</a>
+<a routerLink="/contactus">Contact</a>
 
-<br><br>
-<input (input)="takeData($event)" type="text" placeholder="Send Data to Child1">
-<br>
-<app-child1></app-child1>
+<hr>
+<router-outlet></router-outlet>
