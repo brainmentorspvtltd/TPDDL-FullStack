@@ -2,22 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CardPipe } from './card.pipe';
-import { PhonePipe } from './phone.pipe';
+import { CommonService } from './common.service';
 import { Child1Component } from './child1/child1.component';
-import { Child2Component } from './child2/child2.component';
-import { Child3Component } from './child3/child3.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {TokenInterceptor} from './TokenInterceptor';
 @NgModule({
   declarations: [
-    AppComponent,CardPipe, PhonePipe, Child1Component, Child2Component, Child3Component
+    AppComponent,
+    Child1Component
   ],
   imports: [
 
-  BrowserModule
+  BrowserModule, HttpClientModule
   ],
-  providers: [],
+  providers: [CommonService, {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]
-
 })
 export class AppModule { }

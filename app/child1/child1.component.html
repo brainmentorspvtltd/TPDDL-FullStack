@@ -1,5 +1,32 @@
 <p>
     child1 works!
 </p>
-<h3>Data from Parent is {{sendchild1}}</h3>
-<input type="text" placeholder="I am Child TextBox" (input)="takeInput($event)"> Child Data is {{childdata}}
+<h1>MyData is {{myData}}</h1>
+<button (click)="unsub()">UnSubscribe</button>
+
+<br><br>
+<h1>Ajax Demo</h1>
+<button (click)="doAjaxCall()">Collect Data </button>
+<br>
+<h3>Show Products</h3>
+<ul>
+    <li *ngFor="let product of products">
+        {{product.id}} {{product.name}} {{product.price}} <img src="{{product.url}}">
+    </li>
+</ul>
+
+<h3>Async Pipe Example</h3>
+
+<button (click)="doSecondAjaxCall()">Call Server</button> Products are
+
+
+<div *ngIf="myProductsObs|async;else showloading">
+    <ul>
+        <li *ngFor="let product of myProductsObs|async">
+            {{product.id}} {{product.name}} {{product.price}}
+        </li>
+    </ul>
+</div>
+<ng-template #showloading>
+    <img src="../../assets/images/loader.gif" alt="Loading.....">
+</ng-template>

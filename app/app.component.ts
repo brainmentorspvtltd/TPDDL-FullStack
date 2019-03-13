@@ -1,7 +1,7 @@
-import { Component,ViewChild, ViewChildren,QueryList } from '@angular/core';
-import { Product } from './product';
-import { Child2Component } from './child2/child2.component';
-import { Child3Component } from './child3/child3.component';
+import { Component } from '@angular/core';
+import { interval, Observable } from 'rxjs';
+import { CommonService } from './common.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,59 +9,46 @@ import { Child3Component } from './child3/child3.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularapp';
-  fruits:string[]=[];
-  products:Product[] = [];
-  cardNumber:string;
-  mobile:string;
-  result:number = 0;
-   isLogin:boolean = true;
-   counter:number;
-   data:string;
-   sum:number;
-   parentDataRec:string;
-   @ViewChild(Child2Component)
-   child2:Child2Component;
+  title = 'rxdemos';
+  subject:BehaviorSubject<string>;
+  constructor(private commonService:CommonService){
+    this.subject = this.commonService.getSubject();
+  }
+  takeData(event){
+      this.subject.next(event.target.value);
+  }
+  subscribeObs(e,type):void{
+  var obs:Observable<any> = this.start();
+  console.log("Obs is ",obs);
+  obs.subscribe((data)=>{
+      console.log(type+' Data is ',data);
+    },err=>{
+      console.log('Error is ',err);
+    },()=>{
+      console.log('Complete');
+    })
+  }
+  start():Observable<any>{
 
-   @ViewChildren(Child3Component)
-   child3:QueryList<Child3Component>;
-   recChildData(event){
-      this.parentDataRec = event;
-   }
-   sendToChildrens(event){
-      let val = event.target.value;
-      this.child3.forEach(child=>{
-
-        child.showData(val);
-      })
-   }
-   callChild2():void{
-        this.sum = this.child2.add(100,200);
-   }
-   sendToChild(event){
-      this.data = event.target.value;
-   }
-  takeCardNumber(event):void{
-      this.cardNumber = event.target.value;
-  }
-  add(a:string,b:string,c:string){
-    console.log('A is ',a,' B is ',b, ' C is ',c);
-    this.result = parseInt(a) + parseInt(b) + parseInt(c);
-  }
-  loadProducts():Product[]{
-    this.products.push(new Product(1001,'Apple',90));
-    this.products.push(new Product(1002,'Mango',100));
-    this.products.push(new Product(1003,'Orange',80));
-    return this.products;
-  }
-  plus():void{
-    this.counter++;
-  }
-  constructor(){
-    this.counter = 0;
-    this.cardNumber = '0';
-    this.fruits = ['Mango','Orange','Apple'];
-    this.products = this.loadProducts();
-    this.mobile = '9992212321';
+   var myObservable:Observable<any> = Observable.create((obs=>{
+    var counter =0;
+    setInterval(()=>{
+      counter++;
+      obs.next(counter);
+      if(counter>=10){
+        obs.error('React to 10');
+      }
+     },1000)
+   }));
+   return myObservable;
+    // var intervalObs:Observable<any> = interval(1000);
+    //return intervalObs;
+    // intervalObs.subscribe((data)=>{
+    //   console.log('Data is ',data);
+    // },err=>{
+    //   console.log('Error is ',err);
+    // },()=>{
+    //   console.log('Complete');
+    // })
   }
 }
