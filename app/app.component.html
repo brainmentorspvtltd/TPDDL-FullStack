@@ -1,8 +1,28 @@
-<h1>SPA Demo</h1>
+<!-- <div class='container'>
+    <app-input></app-input>
+    <app-list></app-list>
+</div> -->
+<div class='container-fluid'>
+    <h1 class='alert-success text-center'>Crud App</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">My CRUD App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a>
-<a routerLink="/about">About</a>
-<a routerLink="/contactus">Contact</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/list">List</a>
+                </li>
+            </ul>
 
-<hr>
-<router-outlet></router-outlet>
+        </div>
+    </nav>
+</div>
+<div class='container'>
+    <router-outlet></router-outlet>
+</div>

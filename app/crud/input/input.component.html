@@ -1,0 +1,26 @@
+<div class='form-group'>
+
+    <label for="">Id</label>
+    <input class="form-control" #id type="text" placeholder="Type Id Here">
+</div>
+<div class='form-group'>
+    <label for="">Name</label>
+    <input class="form-control" #name type="text" placeholder="Type Name Here">
+</div>
+<div class='form-group'>
+    <label for="">Price</label>
+    <input class="form-control" #price type="text" placeholder="Type Price Here">
+</div>
+<div class='form-group'>
+    <button class='btn btn-primary mr-2' (click)="add(id.value, name.value, price.value)">Add</button>
+    <button class='btn btn-danger mr-2'>Delete</button>
+    <button class='btn btn-info mr-2'>Search</button>
+    <button class='btn btn-dark mr-2'>Update</button>
+    <button class='btn btn-info' (click)="toggleSort()">Sort</button>
+    <!-- [hidden]='isSortShow' -->
+    <select id='sortdrop' #sortby (change)="doSort(sortby.value)">
+      <option value="price">By Price</option>
+      <option value="name">By Name</option>
+      <option value="id">By Id</option>
+    </select>
+</div>

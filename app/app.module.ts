@@ -2,20 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { SpamoduleModule } from './spamodule/spamodule.module';
+import { InputComponent } from './crud/input/input.component';
+import { ListComponent } from './crud/list/list.component';
+import { RecordComponent } from './crud/record/record.component';
+import {Routes, RouterModule} from '@angular/router';
+const routes:Routes= [{path:'',component:InputComponent},{path:'list',component:ListComponent}]
 
 @NgModule({
   declarations: [
-    AppComponent//,
-    //HomeComponent
+    AppComponent,
+    InputComponent,
+    ListComponent,
+    RecordComponent
   ],
   imports: [
-
-  BrowserModule,SpamoduleModule
+    BrowserModule, RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [AppComponent ]  //,
-  //exports:[HomeComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

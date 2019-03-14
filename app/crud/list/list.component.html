@@ -1,0 +1,24 @@
+<hr>
+
+<h1>Total Mark {{markCount}} Total UnMark {{items.length-markCount}} Total Records {{items.length}} </h1>
+<table class='table table-bordered'>
+    <thead class='thead-dark'>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr [ngClass]="item.isMarked?'alert-danger':''" *ngFor="let item of items">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td><img (click)="toggleMark(item.id)" class='icon' src='../../../assets/images/delete.png'>
+                <img class='icon' src='../../../assets/images/update.jpeg'>
+            </td>
+        </tr>
+    </tbody>
+</table>
