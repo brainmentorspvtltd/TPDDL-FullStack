@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div_1 {
+            width: 300px;
+            height: 300px;
+            border: 25px solid red;
+            margin: 0 auto;
+            /* border-radius: 40px; */
+            /* border-radius: 20px 40px 60px 80px; */
+            /* border-radius: 10px 100px; */
+            border-radius: 50%;
+            overflow: hidden;
+            /* x,y,blur,spread,color */
+            box-shadow: 10px 10px 20px 0px #000;
+        }
+        
+        #div_1 img {
+            height: inherit;
+            /* filter: blur(10px); */
+            filter: brightness(200%);
+            /* filter: grayscale(1); */
+        }
+        
+        img {
+            width: 100%;
+            max-height: 500px;
+        }
+        
+        .desc {
+            position: absolute;
+            top: 100px;
+            padding: 50px;
+            font-size: 30px;
+            /* background-color: rgba(255, 0, 0, 0.5); */
+            /* opacity: 0.5; */
+            /* background: linear-gradient(red, yellow, blue, orange); */
+            /* background: linear-gradient(160deg, orange, rgba(255, 255, 255, 0.5), green); */
+            background: -moz-linear-gradient(202deg, rgba(130, 255, 105, 1) 0%, rgba(68, 195, 115, 1) 47%, rgba(33, 160, 121, 1) 74%, rgba(0, 128, 128, 1) 100%);
+            /* ff3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 128, 128, 1)), color-stop(26%, rgba(33, 160, 121, 1)), color-stop(53%, rgba(68, 195, 115, 1)), color-stop(100%, rgba(130, 255, 105, 1)));
+            /* safari4+,chrome */
+            background: -webkit-linear-gradient(202deg, rgba(130, 255, 105, 1) 0%, rgba(68, 195, 115, 1) 47%, rgba(33, 160, 121, 1) 74%, rgba(0, 128, 128, 1) 100%);
+            /* safari5.1+,chrome10+ */
+            background: -o-linear-gradient(202deg, rgba(130, 255, 105, 1) 0%, rgba(68, 195, 115, 1) 47%, rgba(33, 160, 121, 1) 74%, rgba(0, 128, 128, 1) 100%);
+            /* opera 11.10+ */
+            background: -ms-linear-gradient(202deg, rgba(130, 255, 105, 1) 0%, rgba(68, 195, 115, 1) 47%, rgba(33, 160, 121, 1) 74%, rgba(0, 128, 128, 1) 100%);
+            /* ie10+ */
+            background: linear-gradient(248deg, rgba(130, 255, 105, 1) 0%, rgba(68, 195, 115, 1) 47%, rgba(33, 160, 121, 1) 74%, rgba(0, 128, 128, 1) 100%);
+            /* w3c */
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#008080', endColorstr='#82FF69', GradientType=1);
+            /* ie6-9 */
+        }
+        
+        #banner {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Background and Borders</h1>
+
+    <div id="banner">
+        <img src="shutterstock_218151253.jpg" alt="">
+        <div class="desc">
+            <h2>This is some heading</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, maiores vero voluptates praesentium odio sapiente harum, fuga reiciendis odit quae magni officiis dolore rem vel autem modi earum impedit! Ut.
+            </p>
+        </div>
+    </div>
+
+    <div id="div_1">
+        <img src="dhoni.jpg" alt="">
+    </div>
+
+</body>
+
+</html>

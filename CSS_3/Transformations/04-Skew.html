@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div_1 {
+            width: 300px;
+            height: 300px;
+            border: 25px solid red;
+            margin: 0 auto;
+            /* overflow: hidden; */
+            box-shadow: 10px 10px 20px 0px #000;
+            perspective: 400px;
+        }
+        
+        #div_1 img {
+            height: inherit;
+            filter: brightness(200%);
+            transition-duration: 1s;
+            /* transform-origin: left; */
+        }
+        
+        img {
+            width: 100%;
+            max-height: 500px;
+        }
+        
+        #div_1:hover img {
+            /* transform: skewX(150deg); */
+            transform: skewY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Transform Skew</h1>
+
+    <div id="div_1">
+        <img src="../dhoni.jpg" alt="">
+    </div>
+
+</body>
+
+</html>
