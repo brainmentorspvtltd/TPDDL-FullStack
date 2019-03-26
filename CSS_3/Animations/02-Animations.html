@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        
+        #slider {
+            width: 500%;
+            animation: slider 20s infinite linear;
+        }
+        
+        img {
+            width: 100%;
+            max-height: 400px;
+        }
+        
+        .slide {
+            display: inline-block;
+            width: 20%;
+            margin: 0px -2px;
+        }
+        
+        @keyframes slider {
+            0%,
+            18% {
+                transform: translateX(0%);
+            }
+            20%,
+            38% {
+                transform: translateX(-20%);
+            }
+            40%,
+            58% {
+                transform: translateX(-40%);
+            }
+            60%,
+            78% {
+                transform: translateX(-60%);
+            }
+            80%,
+            100% {
+                transform: translateX(-80%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Slider</h1>
+
+    <div id="slider">
+        <div class="slide">
+            <img src="../Cloud-Computing-1.png" alt="">
+        </div>
+        <div class="slide">
+            <img src="../shutterstock_218151253.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="../students.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="../students.png" alt="">
+        </div>
+        <div class="slide">
+            <img src="../Cloud-Computing-1.png" alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>

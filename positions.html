@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 20px 20px 80px;
+            border: 2px solid red;
+        }
+        
+        img {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        
+        #parent {
+            position: relative;
+        }
+        
+        .child {
+            position: relative;
+        }
+        
+        .grand_child {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Positions</h1>
+
+    <div id="parent">
+        <h2>This is inside parent</h2>
+        <div class="child">
+            <h2>This is inside child</h2>
+            <div class="grand_child">
+                <h2>This is inside grand child</h2>
+                <img src="CSS_3/cap_11.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
