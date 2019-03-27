@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <h1>Flexbox</h1>
+                </div>
+                <div class="col-2">
+                    <nav>
+                        <button class="menu-btn">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </button>
+                        <ul>
+                            <li><a href="#">Menu Item_1</a></li>
+                            <li><a href="#">Menu Item_2</a></li>
+                            <li><a href="#">Menu Item_3</a></li>
+                            <li><a href="#">Menu Item_4</a></li>
+                            <li><a href="#">Menu Item_5</a></li>
+                            <li><a href="#">Menu Item_6</a></li>
+                            <li><a href="#">Menu Item_7</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <aside id="sidebar_1">
+                    <h2>Sidebar_1</h2>
+                    <img src="../CSS_3/cap_11.png" alt="">
+                    <ul>
+                        <li><a href="#">Sidebar_1</a></li>
+                        <li><a href="#">Sidebar_1</a></li>
+                        <li><a href="#">Sidebar_1</a></li>
+                        <li><a href="#">Sidebar_1</a></li>
+                        <li><a href="#">Sidebar_1</a></li>
+                        <li><a href="#">Sidebar_1</a></li>
+                        <li><a href="#">Sidebar_1</a></li>
+                        <li><a href="#">Sidebar_1</a></li>
+                        <li><a href="#">Sidebar_1</a></li>
+                        <li><a href="#">Sidebar_1</a></li>
+                    </ul>
+                </aside>
+                <main id="main">
+                    <article>
+                        <section id="post_1">
+                            <figure>
+                                <img src="../CSS_3/dhoni.jpg" alt="">
+                            </figure>
+                            <div class="text">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime explicabo aperiam exercitationem facilis quibusdam suscipit commodi consequatur possimus officia odit provident, culpa atque deserunt quo officiis reprehenderit aliquid, consequuntur accusamus!
+                                </p>
+                            </div>
+                        </section>
+                        <section id="section_2">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </section>
+                    </article>
+                </main>
+                <aside id="sidebar_2">
+                    <h2>Sidebar_2</h2>
+                    <img src="download (1).jpg" alt="">
+                    <img src="download (1).jpg" alt="">
+                    <img src="download (1).jpg" alt="">
+                    <img src="download (1).jpg" alt="">
+                    <img src="download (1).jpg" alt="">
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".menu-btn").click(function() {
+                $("nav").toggleClass("menu_toggle");
+            })
+        })
+    </script>
+</body>
+
+</html>

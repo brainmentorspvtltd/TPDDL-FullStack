@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="jquery.lineProgressbar.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>jQuery LineProgressbar Demo</h1>
+        <h2>jQuery</h2>
+        <div id="jq"></div>
+        <h2>HTML5</h2>
+        <div id="html"></div>
+        <h2>CSS/CSS3</h2>
+        <div id="css"></div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="jquery.lineProgressbar.js"></script>
+    <script>
+        $('#jq').LineProgressbar({
+            percentage: 90,
+            radius: '3px',
+            height: '20px',
+        });
+        $('#html').LineProgressbar({
+            percentage: 80,
+            radius: '3px',
+            height: '20px',
+            fillBackgroundColor: '#DA4453'
+        });
+        $('#css').LineProgressbar({
+            percentage: 70,
+            radius: '3px',
+            height: '20px',
+            fillBackgroundColor: '#E0C341'
+        });
+    </script>
+</body>
+
+</html>
